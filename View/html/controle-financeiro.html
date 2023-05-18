@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro | Bots</title>
+    <!--Icone do title-->
+    <link rel="icon" href="../style/midia/logo_sem_nome.png">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../style/css/estrelas-background.css">
+   
+
+    <link rel="stylesheet" href="../../View/style/css/css-controle_financeiro/controle-financeiro.css">
+</head>
+
+<body>
+
+    <h1>Controle Financeiro</h1>
+
+    <main> 
+
+        <div class="resume">
+            <div>
+                Depositos: R$
+                <span class="incomes">0.00</span>
+            </div>
+            <div>
+                Despesas: R$
+                <span class="expenses">0.00</span>
+            </div>
+            <div>
+                Total: R$
+                <span class="total">0.00</span>
+            </div>
+        </div>
+        <div class="newItem">
+            <div class="divDesc">
+                <label for="desc">Categorias</label>
+                <input type="text" id="desc" />
+            </div>
+            <div class="divAmount">
+                <label for="amount">Valor</label>
+                <input type="number" id="amount" />
+            </div>
+            <div class="divType">
+                <label for="type">Tipo</label>
+                <select id="type">
+                    <option>Depositos</option>
+                    <option>Saída</option>
+                </select>
+            </div>
+            <button id="btnNew">Incluir</button>
+        </div>
+
+        <div class="divTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th class="columnAmount">Valor</th>
+                        <th class="columnType">Tipo</th>
+                        <th class="columnAction"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+        </div>
+
+        <footer>
+            <a href="../../View/html/dashboard.html" target="_blank">BOTS.2023</a>
+          </footer> 
+    </main>
+
+    
+        <div class="img-boneco"">
+            <img src="../../View/img/robo.png" alt="" height="400px" width="400px">
+        </div>
+        
+
+
+        
+
+    <script src="../../Controller/js/controle-financeiro.js"></script>
+</body>
+
+</html>

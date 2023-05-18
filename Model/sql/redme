@@ -1,0 +1,50 @@
+DROP DATABASE if EXISTS login;
+CREATE DATABASE login;
+USE login;
+CREATE TABLE usuarios (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    codigo VARCHAR(50) NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+ALTER TABLE usuarios
+ADD CONSTRAINT usuario_unico UNIQUE (email);
+
+CREATE TABLE enderecos (
+    id_endereco INT(11) NOT NULL AUTO_INCREMENT,
+    rua VARCHAR(100) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    complemento VARCHAR(100),
+    cidade VARCHAR(100) NOT NULL,
+    estado VARCHAR(2) NOT NULL,
+    cep VARCHAR(8) NOT NULL,
+    bairro VARCHAR(100) NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY ( id_endereco)
+);
+
+CREATE TABLE telefones (
+    id_telefone INT(11) NOT NULL AUTO_INCREMENT,
+    tipo VARCHAR(20) NOT NULL,
+    ddd VARCHAR(3) NOT NULL,
+    telefone VARCHAR(15) NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_telefone)
+);
+
+ALTER TABLE telefones
+ADD CONSTRAINT uc_telefone_unico UNIQUE (DDD, telefone);
+
+
+CREATE TABLE perfis (
+    id_usuario INT(11) NOT NULL AUTO_INCREMENT,
+    foto_perfil VARCHAR(255),
+    updated_at DATETIME NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id_usuario)
+);
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #e3f2fd;
+}
+
+.select-menu {
+  max-width: 330px;
+  margin: 50px auto;
+}
+.select-menu .select-btn {
+  display: flex;
+  height: 55px;
+  background: #fff;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: 2 2 5px rgba(2, 2, 2, 2);
+}
+.select-menu .options {
+  position: absolute;
+  width: 330px;
+  overflow-y: auto;
+  max-height: 295px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation-name: fadeInDown;
+  -webkit-animation-name: fadeInDown;
+  animation-duration: 0.35s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.35s;
+  -webkit-animation-fill-mode: both;
+}
+.select-menu .options .option {
+  display: flex;
+  height: 55px;
+  cursor: pointer;
+  padding: 0 16px;
+  border-radius: 8px;
+  align-items: center;
+  background: #fff;
+}
+.select-menu .options .option:hover {
+  background: #f2f2f2;
+}
+.select-menu .options .option i {
+  font-size: 25px;
+  margin-right: 12px;
+}
+.select-menu .options .option .option-text {
+  font-size: 18px;
+  color: #333;
+}
+
+.select-btn i {
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.select-menu.active .select-btn i {
+  transform: rotate(-180deg);
+}
+.select-menu.active .options {
+  display: block;
+  opacity: 0;
+  z-index: 10;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes fadeInDown {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+}
+    </style>
+</head>
+<body>
+    <!-- Remove 'active' class, this is just to show in Codepen thumbnail -->
+<div class="select-menu active">
+    <div class="select-btn">
+      <span class="sBtn-text"><img src="View/assets/img/robo.png"  width="60px" alt=""  class="user"></span>
+      <ion-icon name="arrow-down-outline"></ion-icon>
+    </div>
+  
+    <ul class="options">
+      <li class="option">
+        <ion-icon name="person-add-outline" style="padding-left: 15px; padding-right: 20px;" ></ion-icon>
+        <span class="option-text">Minha conta</span>
+      </li>
+      <li class="option">
+        <ion-icon name="settings-outline" style="padding-left: 15px; padding-right: 20px;"></ion-icon>
+        <span class="option-text">Configurações</span>
+      </li>
+      <li class="option">
+        <ion-icon name="help-circle-outline" style="padding-left: 15px; padding-right: 20px;"></ion-icon>
+        <span class="option-text">Central de ajuda</span>
+      </li>
+      <li class="option">
+        <ion-icon name="exit-outline" style="padding-left: 15px; padding-right: 20px;"></ion-icon>
+        <span class="option-text">Sair</span>
+      </li>
+    </ul>
+  </div>
+  <script>
+    //Multiple options dropdown
+//https://codepen.io/gatoledo1/pen/QWmpWjK
+
+const optionMenu = document.querySelector(".select-menu"),
+  selectBtn = optionMenu.querySelector(".select-btn"),
+  options = optionMenu.querySelectorAll(".option"),
+  sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+selectBtn.addEventListener("click", () =>
+  optionMenu.classList.toggle("active")
+);
+
+options.forEach((option) => {
+  option.addEventListener("click", () => {
+    let selectedOption = option.querySelector(".option-text").innerText;
+    sBtn_text.innerText = selectedOption;
+
+    optionMenu.classList.remove("active");
+  });
+});
+
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

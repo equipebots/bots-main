@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--Icone do title-->
+     <link rel="icon" href="../style/midia/logo_sem_nome.png">
+     <!--Link para a pasta de estilos-->
+     <link rel="stylesheet" href="../style/css/css-telefone/telefone.css">
+     <link rel="stylesheet" href="../style/css/estrelas-background.css">
+    <title>Telefone | Bots</title>
+</head>
+
+<body>
+    <!-- Estralas do fundo -->
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
+    <div class="container">
+        <div class="form">
+            <form id="address-form" action="../../Controller/php/envio-telefone.php" method="POST" enctype="multipart/form-data">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Contato</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="ddd">DDD</label>
+                        <input id="ddd" type="text" name="ddd" placeholder="Digite seu DDD" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="telefone">Telefone</label>
+                        <input id="telefone" type="tel" name="telefone" placeholder="Digite seu telefone" required>
+                    </div>
+                    <div class="input-group"> 
+                    <div class="input-box">
+                        <label for="tipo">Tipo</label>
+                        <select name="tipo" id="tipo">
+                            <option value="selecione uma opção">Selecione uma opção</option>
+                            <option value="Celular" name="celular">Celular</option>
+                            <option value="Ramal" name="ramal">Ramal</option>
+                            <option value="Residencial" name="residencial">Residencial</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="continue-button">
+                    <button type="submit">Continuar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

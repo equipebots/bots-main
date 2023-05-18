@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem Vindo | Bots</title>
+    <!--Link para o bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!--Link para o arquivo de reset do site-->
+    <link rel="stylesheet" href="View/style/css/reset.css">
+    <!--Link para o arquivo de estilo da página-->
+    <link rel="stylesheet" href="View/style/css/css-index/lading-page.css">
+    <!--Link para o  arquivo de background-->
+    <link rel="stylesheet" href="View/style/css/estrelas-background.css">
+    <!--Link para o botão-->
+    <link rel="stylesheet" href="View/style/css/css-index/button.css">
+    
+    <!--Icone do title-->
+    <link rel="icon" href="View/style/midia/logo_sem_nome.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Estralas do fundo -->
+    <section class="wrapper">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </section>
+    <!--Titulo da página com logo-->
+    <header>
+        <ul>
+            <a href="View/html/index-login.html" id="inscreva-se-btn">
+                <li>Já tem uma conta?</li>
+            </a>
+        </ul>
+    </header>
+    <!--Texto da página principal e paragrafo-->
+    <main>
+        <aside>
+            <h2 class="principal">BOTS</h2>
+            <h2>Sua plataforma de estudo online</h2>
+            <p>Nossa plataforma de estudos é flexível e adaptável a sua agenda, permitindo que você aprenda no seu
+                próprio ritmo, em qualquer hora e lugar. Inscreva-se agora e comece a transformar sua vida financeira
+                para sempre!</p>
+        </aside>
+        <!--Imagem-->
+        <article>
+            <div class="content">
+                <img src="View/assets/img/personagem.png" alt="personagem">
+            </div>
+
+        </article>
+        <!--Js para movimentar o personagem-->
+        <script src="js/logo-animado-dashboard.js"></script>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+        </script>
+    <!--logo animado-->
+    <script>
+        VanillaTilt.init(document.querySelector(".content"), {
+            max: 25,
+            speed: 400,
+        });
+    </script>
+
+</body>
+
+</html>
